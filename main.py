@@ -35,7 +35,7 @@ except requests.exceptions.ConnectTimeout:
     print("Connection timed out, try again.")
     data = get_list()
     print(data)
-scope = 'playlist-modify-public playlist-modify-private'
+scope = 'playlist-modify-public playlist-modify-private' #This enables editing of playlist.
 
 # Checks if our OAuth is valid, and if not , it generates a new token saved in cache file it creates.
 # Remember to use same account on your browser and spotify as default email id is used by spotipy upon opening the browser.
@@ -72,6 +72,7 @@ for songs in track_uris:
     """Add songs to the playlist."""
     sp.playlist_add_items(playlist_id=playlist_id, items=[songs.rsplit(":")[-1]])
 print("We did it joe!") # ;)
+
 
 
 
